@@ -1,0 +1,702 @@
+<html>
+  <head>
+    <style>
+path { fill: green; stroke-width: 1; stroke: green; }
+rect.blocked { fill: black; stroke-width: 1; stroke: black; }
+rect.destination { fill: yellow; stroke-width: 1; stroke: black; }
+rect.empty { fill: white; stroke-width: 1; stroke: black; }
+rect.full { fill: cyan; stroke-width: 1; stroke: black; }
+text.path { fill: red; text-anchor: middle; }
+    </style>
+  </head>
+  <body>
+<p><svg width="360" height="320">
+<text x="5" y="25">(0,0)</text>
+<text x="310" y="25" style="text-anchor: end">Starting</text>
+<rect x="20" y="40" height="40" width="40" class="blocked"/>
+<text x="40.0" y="65" class="path">27</text>
+<rect x="60" y="40" height="40" width="40" class="blocked"/>
+<text x="80.0" y="65" class="path">27</text>
+<rect x="100" y="40" height="40" width="40" class="blocked"/>
+<text x="120.0" y="65" class="path">27</text>
+<rect x="140" y="40" height="40" width="40" class="blocked"/>
+<text x="160.0" y="65" class="path">27</text>
+<rect x="180" y="40" height="40" width="40" class="blocked"/>
+<text x="200.0" y="65" class="path">27</text>
+<rect x="220" y="40" height="40" width="40" class="blocked"/>
+<text x="240.0" y="65" class="path">27</text>
+<rect x="260" y="40" height="40" width="40" class="blocked"/>
+<text x="280.0" y="65" class="path">27</text>
+<rect x="20" y="80" height="40" width="40" class="blocked"/>
+<text x="40.0" y="105" class="path">27</text>
+<rect x="60" y="80" height="40" width="40" class="empty"/>
+<text x="80.0" y="105" class="path">26</text>
+<rect x="100" y="80" height="40" width="40" class="empty"/>
+<text x="120.0" y="105" class="path">26</text>
+<rect x="140" y="80" height="40" width="40" class="empty"/>
+<text x="160.0" y="105" class="path">26</text>
+<rect x="180" y="80" height="40" width="40" class="empty"/>
+<text x="200.0" y="105" class="path">26</text>
+<rect x="220" y="80" height="40" width="40" class="empty"/>
+<text x="240.0" y="105" class="path">26</text>
+<rect x="260" y="80" height="40" width="40" class="blocked"/>
+<text x="280.0" y="105" class="path">27</text>
+<rect x="20" y="120" height="40" width="40" class="blocked"/>
+<text x="40.0" y="145" class="path">27</text>
+<rect x="60" y="120" height="40" width="40" class="empty"/>
+<text x="80.0" y="145" class="path">26</text>
+<rect x="100" y="120" height="40" width="40" class="blocked"/>
+<text x="120.0" y="145" class="path">27</text>
+<rect x="140" y="120" height="40" width="40" class="blocked"/>
+<text x="160.0" y="145" class="path">27</text>
+<rect x="180" y="120" height="40" width="40" class="blocked"/>
+<text x="200.0" y="145" class="path">27</text>
+<rect x="220" y="120" height="40" width="40" class="empty"/>
+<text x="240.0" y="145" class="path">26</text>
+<rect x="260" y="120" height="40" width="40" class="blocked"/>
+<text x="280.0" y="145" class="path">27</text>
+<rect x="20" y="160" height="40" width="40" class="blocked"/>
+<text x="40.0" y="185" class="path">27</text>
+<rect x="60" y="160" height="40" width="40" class="empty"/>
+<text x="80.0" y="185" class="path">26</text>
+<rect x="100" y="160" height="40" width="40" class="blocked"/>
+<text x="120.0" y="185" class="path">27</text>
+<rect x="140" y="160" height="40" width="40" class="empty"/>
+<text x="160.0" y="185" class="path">26</text>
+<rect x="180" y="160" height="40" width="40" class="empty"/>
+<text x="200.0" y="185" class="path">26</text>
+<rect x="220" y="160" height="40" width="40" class="destination"/>
+<text x="240.0" y="185" class="path">0</text>
+<rect x="260" y="160" height="40" width="40" class="blocked"/>
+<text x="280.0" y="185" class="path">27</text>
+<rect x="20" y="200" height="40" width="40" class="blocked"/>
+<text x="40.0" y="225" class="path">27</text>
+<rect x="60" y="200" height="40" width="40" class="empty"/>
+<text x="80.0" y="225" class="path">26</text>
+<rect x="100" y="200" height="40" width="40" class="empty"/>
+<text x="120.0" y="225" class="path">26</text>
+<rect x="140" y="200" height="40" width="40" class="empty"/>
+<text x="160.0" y="225" class="path">26</text>
+<rect x="180" y="200" height="40" width="40" class="blocked"/>
+<text x="200.0" y="225" class="path">27</text>
+<rect x="220" y="200" height="40" width="40" class="empty"/>
+<text x="240.0" y="225" class="path">26</text>
+<rect x="260" y="200" height="40" width="40" class="blocked"/>
+<text x="280.0" y="225" class="path">27</text>
+<rect x="20" y="240" height="40" width="40" class="blocked"/>
+<text x="40.0" y="265" class="path">27</text>
+<rect x="60" y="240" height="40" width="40" class="empty"/>
+<text x="80.0" y="265" class="path">26</text>
+<rect x="100" y="240" height="40" width="40" class="empty"/>
+<text x="120.0" y="265" class="path">26</text>
+<rect x="140" y="240" height="40" width="40" class="empty"/>
+<text x="160.0" y="265" class="path">26</text>
+<rect x="180" y="240" height="40" width="40" class="empty"/>
+<text x="200.0" y="265" class="path">26</text>
+<rect x="220" y="240" height="40" width="40" class="empty"/>
+<text x="240.0" y="265" class="path">26</text>
+<rect x="260" y="240" height="40" width="40" class="blocked"/>
+<text x="280.0" y="265" class="path">27</text>
+<rect x="20" y="280" height="40" width="40" class="blocked"/>
+<text x="40.0" y="305" class="path">27</text>
+<rect x="60" y="280" height="40" width="40" class="blocked"/>
+<text x="80.0" y="305" class="path">27</text>
+<rect x="100" y="280" height="40" width="40" class="blocked"/>
+<text x="120.0" y="305" class="path">27</text>
+<rect x="140" y="280" height="40" width="40" class="blocked"/>
+<text x="160.0" y="305" class="path">27</text>
+<rect x="180" y="280" height="40" width="40" class="blocked"/>
+<text x="200.0" y="305" class="path">27</text>
+<rect x="220" y="280" height="40" width="40" class="blocked"/>
+<text x="240.0" y="305" class="path">27</text>
+<rect x="260" y="280" height="40" width="40" class="blocked"/>
+<text x="280.0" y="305" class="path">27</text>
+</svg></p>
+<p><svg width="360" height="320">
+<text x="5" y="25">(0,0)</text>
+<text x="310" y="25" style="text-anchor: end">After loop 0</text>
+<rect x="20" y="40" height="40" width="40" class="blocked"/>
+<text x="40.0" y="65" class="path">27</text>
+<rect x="60" y="40" height="40" width="40" class="blocked"/>
+<text x="80.0" y="65" class="path">27</text>
+<rect x="100" y="40" height="40" width="40" class="blocked"/>
+<text x="120.0" y="65" class="path">27</text>
+<rect x="140" y="40" height="40" width="40" class="blocked"/>
+<text x="160.0" y="65" class="path">27</text>
+<rect x="180" y="40" height="40" width="40" class="blocked"/>
+<text x="200.0" y="65" class="path">27</text>
+<rect x="220" y="40" height="40" width="40" class="blocked"/>
+<text x="240.0" y="65" class="path">27</text>
+<rect x="260" y="40" height="40" width="40" class="blocked"/>
+<text x="280.0" y="65" class="path">27</text>
+<rect x="20" y="80" height="40" width="40" class="blocked"/>
+<text x="40.0" y="105" class="path">27</text>
+<rect x="60" y="80" height="40" width="40" class="empty"/>
+<text x="80.0" y="105" class="path">26</text>
+<rect x="100" y="80" height="40" width="40" class="empty"/>
+<text x="120.0" y="105" class="path">26</text>
+<rect x="140" y="80" height="40" width="40" class="empty"/>
+<text x="160.0" y="105" class="path">26</text>
+<rect x="180" y="80" height="40" width="40" class="empty"/>
+<text x="200.0" y="105" class="path">26</text>
+<rect x="220" y="80" height="40" width="40" class="empty"/>
+<text x="240.0" y="105" class="path">26</text>
+<rect x="260" y="80" height="40" width="40" class="blocked"/>
+<text x="280.0" y="105" class="path">27</text>
+<rect x="20" y="120" height="40" width="40" class="blocked"/>
+<text x="40.0" y="145" class="path">27</text>
+<rect x="60" y="120" height="40" width="40" class="empty"/>
+<text x="80.0" y="145" class="path">26</text>
+<rect x="100" y="120" height="40" width="40" class="blocked"/>
+<text x="120.0" y="145" class="path">27</text>
+<rect x="140" y="120" height="40" width="40" class="blocked"/>
+<text x="160.0" y="145" class="path">27</text>
+<rect x="180" y="120" height="40" width="40" class="blocked"/>
+<text x="200.0" y="145" class="path">27</text>
+<rect x="220" y="120" height="40" width="40" class="full"/>
+<text x="240.0" y="145" class="path">1</text>
+<path d="M240.0 158 L244.0 154 L236.0 154 Z" />
+<rect x="260" y="120" height="40" width="40" class="blocked"/>
+<text x="280.0" y="145" class="path">27</text>
+<rect x="20" y="160" height="40" width="40" class="blocked"/>
+<text x="40.0" y="185" class="path">27</text>
+<rect x="60" y="160" height="40" width="40" class="empty"/>
+<text x="80.0" y="185" class="path">26</text>
+<rect x="100" y="160" height="40" width="40" class="blocked"/>
+<text x="120.0" y="185" class="path">27</text>
+<rect x="140" y="160" height="40" width="40" class="empty"/>
+<text x="160.0" y="185" class="path">26</text>
+<rect x="180" y="160" height="40" width="40" class="full"/>
+<text x="200.0" y="185" class="path">1</text>
+<path d="M218 180.0 L214 176.0 L214 184.0 Z" />
+<rect x="220" y="160" height="40" width="40" class="destination"/>
+<text x="240.0" y="185" class="path">0</text>
+<rect x="260" y="160" height="40" width="40" class="blocked"/>
+<text x="280.0" y="185" class="path">27</text>
+<rect x="20" y="200" height="40" width="40" class="blocked"/>
+<text x="40.0" y="225" class="path">27</text>
+<rect x="60" y="200" height="40" width="40" class="empty"/>
+<text x="80.0" y="225" class="path">26</text>
+<rect x="100" y="200" height="40" width="40" class="empty"/>
+<text x="120.0" y="225" class="path">26</text>
+<rect x="140" y="200" height="40" width="40" class="full"/>
+<text x="160.0" y="225" class="path">2</text>
+<path d="M176 204 L170 204 L176 210 Z" />
+<rect x="180" y="200" height="40" width="40" class="blocked"/>
+<text x="200.0" y="225" class="path">27</text>
+<rect x="220" y="200" height="40" width="40" class="full"/>
+<text x="240.0" y="225" class="path">1</text>
+<path d="M240.0 202 L244.0 206 L236.0 206 Z" />
+<rect x="260" y="200" height="40" width="40" class="blocked"/>
+<text x="280.0" y="225" class="path">27</text>
+<rect x="20" y="240" height="40" width="40" class="blocked"/>
+<text x="40.0" y="265" class="path">27</text>
+<rect x="60" y="240" height="40" width="40" class="empty"/>
+<text x="80.0" y="265" class="path">26</text>
+<rect x="100" y="240" height="40" width="40" class="full"/>
+<text x="120.0" y="265" class="path">3</text>
+<path d="M136 244 L130 244 L136 250 Z" />
+<rect x="140" y="240" height="40" width="40" class="full"/>
+<text x="160.0" y="265" class="path">3</text>
+<path d="M160.0 242 L164.0 246 L156.0 246 Z" />
+<rect x="180" y="240" height="40" width="40" class="full"/>
+<text x="200.0" y="265" class="path">2</text>
+<path d="M216 244 L210 244 L216 250 Z" />
+<rect x="220" y="240" height="40" width="40" class="full"/>
+<text x="240.0" y="265" class="path">2</text>
+<path d="M240.0 242 L244.0 246 L236.0 246 Z" />
+<rect x="260" y="240" height="40" width="40" class="blocked"/>
+<text x="280.0" y="265" class="path">27</text>
+<rect x="20" y="280" height="40" width="40" class="blocked"/>
+<text x="40.0" y="305" class="path">27</text>
+<rect x="60" y="280" height="40" width="40" class="blocked"/>
+<text x="80.0" y="305" class="path">27</text>
+<rect x="100" y="280" height="40" width="40" class="blocked"/>
+<text x="120.0" y="305" class="path">27</text>
+<rect x="140" y="280" height="40" width="40" class="blocked"/>
+<text x="160.0" y="305" class="path">27</text>
+<rect x="180" y="280" height="40" width="40" class="blocked"/>
+<text x="200.0" y="305" class="path">27</text>
+<rect x="220" y="280" height="40" width="40" class="blocked"/>
+<text x="240.0" y="305" class="path">27</text>
+<rect x="260" y="280" height="40" width="40" class="blocked"/>
+<text x="280.0" y="305" class="path">27</text>
+</svg></p>
+<p><svg width="360" height="320">
+<text x="5" y="25">(0,0)</text>
+<text x="310" y="25" style="text-anchor: end">After loop 1</text>
+<rect x="20" y="40" height="40" width="40" class="blocked"/>
+<text x="40.0" y="65" class="path">27</text>
+<rect x="60" y="40" height="40" width="40" class="blocked"/>
+<text x="80.0" y="65" class="path">27</text>
+<rect x="100" y="40" height="40" width="40" class="blocked"/>
+<text x="120.0" y="65" class="path">27</text>
+<rect x="140" y="40" height="40" width="40" class="blocked"/>
+<text x="160.0" y="65" class="path">27</text>
+<rect x="180" y="40" height="40" width="40" class="blocked"/>
+<text x="200.0" y="65" class="path">27</text>
+<rect x="220" y="40" height="40" width="40" class="blocked"/>
+<text x="240.0" y="65" class="path">27</text>
+<rect x="260" y="40" height="40" width="40" class="blocked"/>
+<text x="280.0" y="65" class="path">27</text>
+<rect x="20" y="80" height="40" width="40" class="blocked"/>
+<text x="40.0" y="105" class="path">27</text>
+<rect x="60" y="80" height="40" width="40" class="empty"/>
+<text x="80.0" y="105" class="path">26</text>
+<rect x="100" y="80" height="40" width="40" class="empty"/>
+<text x="120.0" y="105" class="path">26</text>
+<rect x="140" y="80" height="40" width="40" class="empty"/>
+<text x="160.0" y="105" class="path">26</text>
+<rect x="180" y="80" height="40" width="40" class="full"/>
+<text x="200.0" y="105" class="path">2</text>
+<path d="M216 116 L210 116 L216 110 Z" />
+<rect x="220" y="80" height="40" width="40" class="full"/>
+<text x="240.0" y="105" class="path">2</text>
+<path d="M240.0 118 L244.0 114 L236.0 114 Z" />
+<rect x="260" y="80" height="40" width="40" class="blocked"/>
+<text x="280.0" y="105" class="path">27</text>
+<rect x="20" y="120" height="40" width="40" class="blocked"/>
+<text x="40.0" y="145" class="path">27</text>
+<rect x="60" y="120" height="40" width="40" class="empty"/>
+<text x="80.0" y="145" class="path">26</text>
+<rect x="100" y="120" height="40" width="40" class="blocked"/>
+<text x="120.0" y="145" class="path">27</text>
+<rect x="140" y="120" height="40" width="40" class="blocked"/>
+<text x="160.0" y="145" class="path">27</text>
+<rect x="180" y="120" height="40" width="40" class="blocked"/>
+<text x="200.0" y="145" class="path">27</text>
+<rect x="220" y="120" height="40" width="40" class="full"/>
+<text x="240.0" y="145" class="path">1</text>
+<path d="M240.0 158 L244.0 154 L236.0 154 Z" />
+<rect x="260" y="120" height="40" width="40" class="blocked"/>
+<text x="280.0" y="145" class="path">27</text>
+<rect x="20" y="160" height="40" width="40" class="blocked"/>
+<text x="40.0" y="185" class="path">27</text>
+<rect x="60" y="160" height="40" width="40" class="empty"/>
+<text x="80.0" y="185" class="path">26</text>
+<rect x="100" y="160" height="40" width="40" class="blocked"/>
+<text x="120.0" y="185" class="path">27</text>
+<rect x="140" y="160" height="40" width="40" class="full"/>
+<text x="160.0" y="185" class="path">2</text>
+<path d="M178 180.0 L174 176.0 L174 184.0 Z" />
+<rect x="180" y="160" height="40" width="40" class="full"/>
+<text x="200.0" y="185" class="path">1</text>
+<path d="M218 180.0 L214 176.0 L214 184.0 Z" />
+<rect x="220" y="160" height="40" width="40" class="destination"/>
+<text x="240.0" y="185" class="path">0</text>
+<rect x="260" y="160" height="40" width="40" class="blocked"/>
+<text x="280.0" y="185" class="path">27</text>
+<rect x="20" y="200" height="40" width="40" class="blocked"/>
+<text x="40.0" y="225" class="path">27</text>
+<rect x="60" y="200" height="40" width="40" class="full"/>
+<text x="80.0" y="225" class="path">4</text>
+<path d="M96 236 L90 236 L96 230 Z" />
+<rect x="100" y="200" height="40" width="40" class="full"/>
+<text x="120.0" y="225" class="path">3</text>
+<path d="M136 204 L130 204 L136 210 Z" />
+<rect x="140" y="200" height="40" width="40" class="full"/>
+<text x="160.0" y="225" class="path">2</text>
+<path d="M176 204 L170 204 L176 210 Z" />
+<rect x="180" y="200" height="40" width="40" class="blocked"/>
+<text x="200.0" y="225" class="path">27</text>
+<rect x="220" y="200" height="40" width="40" class="full"/>
+<text x="240.0" y="225" class="path">1</text>
+<path d="M240.0 202 L244.0 206 L236.0 206 Z" />
+<rect x="260" y="200" height="40" width="40" class="blocked"/>
+<text x="280.0" y="225" class="path">27</text>
+<rect x="20" y="240" height="40" width="40" class="blocked"/>
+<text x="40.0" y="265" class="path">27</text>
+<rect x="60" y="240" height="40" width="40" class="full"/>
+<text x="80.0" y="265" class="path">4</text>
+<path d="M96 244 L90 244 L96 250 Z" />
+<rect x="100" y="240" height="40" width="40" class="full"/>
+<text x="120.0" y="265" class="path">3</text>
+<path d="M136 244 L130 244 L136 250 Z" />
+<rect x="140" y="240" height="40" width="40" class="full"/>
+<text x="160.0" y="265" class="path">3</text>
+<path d="M160.0 242 L164.0 246 L156.0 246 Z" />
+<rect x="180" y="240" height="40" width="40" class="full"/>
+<text x="200.0" y="265" class="path">2</text>
+<path d="M216 244 L210 244 L216 250 Z" />
+<rect x="220" y="240" height="40" width="40" class="full"/>
+<text x="240.0" y="265" class="path">2</text>
+<path d="M240.0 242 L244.0 246 L236.0 246 Z" />
+<rect x="260" y="240" height="40" width="40" class="blocked"/>
+<text x="280.0" y="265" class="path">27</text>
+<rect x="20" y="280" height="40" width="40" class="blocked"/>
+<text x="40.0" y="305" class="path">27</text>
+<rect x="60" y="280" height="40" width="40" class="blocked"/>
+<text x="80.0" y="305" class="path">27</text>
+<rect x="100" y="280" height="40" width="40" class="blocked"/>
+<text x="120.0" y="305" class="path">27</text>
+<rect x="140" y="280" height="40" width="40" class="blocked"/>
+<text x="160.0" y="305" class="path">27</text>
+<rect x="180" y="280" height="40" width="40" class="blocked"/>
+<text x="200.0" y="305" class="path">27</text>
+<rect x="220" y="280" height="40" width="40" class="blocked"/>
+<text x="240.0" y="305" class="path">27</text>
+<rect x="260" y="280" height="40" width="40" class="blocked"/>
+<text x="280.0" y="305" class="path">27</text>
+</svg></p>
+<p><svg width="360" height="320">
+<text x="5" y="25">(0,0)</text>
+<text x="310" y="25" style="text-anchor: end">After loop 2</text>
+<rect x="20" y="40" height="40" width="40" class="blocked"/>
+<text x="40.0" y="65" class="path">27</text>
+<rect x="60" y="40" height="40" width="40" class="blocked"/>
+<text x="80.0" y="65" class="path">27</text>
+<rect x="100" y="40" height="40" width="40" class="blocked"/>
+<text x="120.0" y="65" class="path">27</text>
+<rect x="140" y="40" height="40" width="40" class="blocked"/>
+<text x="160.0" y="65" class="path">27</text>
+<rect x="180" y="40" height="40" width="40" class="blocked"/>
+<text x="200.0" y="65" class="path">27</text>
+<rect x="220" y="40" height="40" width="40" class="blocked"/>
+<text x="240.0" y="65" class="path">27</text>
+<rect x="260" y="40" height="40" width="40" class="blocked"/>
+<text x="280.0" y="65" class="path">27</text>
+<rect x="20" y="80" height="40" width="40" class="blocked"/>
+<text x="40.0" y="105" class="path">27</text>
+<rect x="60" y="80" height="40" width="40" class="empty"/>
+<text x="80.0" y="105" class="path">26</text>
+<rect x="100" y="80" height="40" width="40" class="empty"/>
+<text x="120.0" y="105" class="path">26</text>
+<rect x="140" y="80" height="40" width="40" class="full"/>
+<text x="160.0" y="105" class="path">3</text>
+<path d="M178 100.0 L174 96.0 L174 104.0 Z" />
+<rect x="180" y="80" height="40" width="40" class="full"/>
+<text x="200.0" y="105" class="path">2</text>
+<path d="M216 116 L210 116 L216 110 Z" />
+<rect x="220" y="80" height="40" width="40" class="full"/>
+<text x="240.0" y="105" class="path">2</text>
+<path d="M240.0 118 L244.0 114 L236.0 114 Z" />
+<rect x="260" y="80" height="40" width="40" class="blocked"/>
+<text x="280.0" y="105" class="path">27</text>
+<rect x="20" y="120" height="40" width="40" class="blocked"/>
+<text x="40.0" y="145" class="path">27</text>
+<rect x="60" y="120" height="40" width="40" class="empty"/>
+<text x="80.0" y="145" class="path">26</text>
+<rect x="100" y="120" height="40" width="40" class="blocked"/>
+<text x="120.0" y="145" class="path">27</text>
+<rect x="140" y="120" height="40" width="40" class="blocked"/>
+<text x="160.0" y="145" class="path">27</text>
+<rect x="180" y="120" height="40" width="40" class="blocked"/>
+<text x="200.0" y="145" class="path">27</text>
+<rect x="220" y="120" height="40" width="40" class="full"/>
+<text x="240.0" y="145" class="path">1</text>
+<path d="M240.0 158 L244.0 154 L236.0 154 Z" />
+<rect x="260" y="120" height="40" width="40" class="blocked"/>
+<text x="280.0" y="145" class="path">27</text>
+<rect x="20" y="160" height="40" width="40" class="blocked"/>
+<text x="40.0" y="185" class="path">27</text>
+<rect x="60" y="160" height="40" width="40" class="full"/>
+<text x="80.0" y="185" class="path">4</text>
+<path d="M96 196 L90 196 L96 190 Z" />
+<rect x="100" y="160" height="40" width="40" class="blocked"/>
+<text x="120.0" y="185" class="path">27</text>
+<rect x="140" y="160" height="40" width="40" class="full"/>
+<text x="160.0" y="185" class="path">2</text>
+<path d="M178 180.0 L174 176.0 L174 184.0 Z" />
+<rect x="180" y="160" height="40" width="40" class="full"/>
+<text x="200.0" y="185" class="path">1</text>
+<path d="M218 180.0 L214 176.0 L214 184.0 Z" />
+<rect x="220" y="160" height="40" width="40" class="destination"/>
+<text x="240.0" y="185" class="path">0</text>
+<rect x="260" y="160" height="40" width="40" class="blocked"/>
+<text x="280.0" y="185" class="path">27</text>
+<rect x="20" y="200" height="40" width="40" class="blocked"/>
+<text x="40.0" y="225" class="path">27</text>
+<rect x="60" y="200" height="40" width="40" class="full"/>
+<text x="80.0" y="225" class="path">4</text>
+<path d="M96 236 L90 236 L96 230 Z" />
+<rect x="100" y="200" height="40" width="40" class="full"/>
+<text x="120.0" y="225" class="path">3</text>
+<path d="M136 204 L130 204 L136 210 Z" />
+<rect x="140" y="200" height="40" width="40" class="full"/>
+<text x="160.0" y="225" class="path">2</text>
+<path d="M176 204 L170 204 L176 210 Z" />
+<rect x="180" y="200" height="40" width="40" class="blocked"/>
+<text x="200.0" y="225" class="path">27</text>
+<rect x="220" y="200" height="40" width="40" class="full"/>
+<text x="240.0" y="225" class="path">1</text>
+<path d="M240.0 202 L244.0 206 L236.0 206 Z" />
+<rect x="260" y="200" height="40" width="40" class="blocked"/>
+<text x="280.0" y="225" class="path">27</text>
+<rect x="20" y="240" height="40" width="40" class="blocked"/>
+<text x="40.0" y="265" class="path">27</text>
+<rect x="60" y="240" height="40" width="40" class="full"/>
+<text x="80.0" y="265" class="path">4</text>
+<path d="M96 244 L90 244 L96 250 Z" />
+<rect x="100" y="240" height="40" width="40" class="full"/>
+<text x="120.0" y="265" class="path">3</text>
+<path d="M136 244 L130 244 L136 250 Z" />
+<rect x="140" y="240" height="40" width="40" class="full"/>
+<text x="160.0" y="265" class="path">3</text>
+<path d="M160.0 242 L164.0 246 L156.0 246 Z" />
+<rect x="180" y="240" height="40" width="40" class="full"/>
+<text x="200.0" y="265" class="path">2</text>
+<path d="M216 244 L210 244 L216 250 Z" />
+<rect x="220" y="240" height="40" width="40" class="full"/>
+<text x="240.0" y="265" class="path">2</text>
+<path d="M240.0 242 L244.0 246 L236.0 246 Z" />
+<rect x="260" y="240" height="40" width="40" class="blocked"/>
+<text x="280.0" y="265" class="path">27</text>
+<rect x="20" y="280" height="40" width="40" class="blocked"/>
+<text x="40.0" y="305" class="path">27</text>
+<rect x="60" y="280" height="40" width="40" class="blocked"/>
+<text x="80.0" y="305" class="path">27</text>
+<rect x="100" y="280" height="40" width="40" class="blocked"/>
+<text x="120.0" y="305" class="path">27</text>
+<rect x="140" y="280" height="40" width="40" class="blocked"/>
+<text x="160.0" y="305" class="path">27</text>
+<rect x="180" y="280" height="40" width="40" class="blocked"/>
+<text x="200.0" y="305" class="path">27</text>
+<rect x="220" y="280" height="40" width="40" class="blocked"/>
+<text x="240.0" y="305" class="path">27</text>
+<rect x="260" y="280" height="40" width="40" class="blocked"/>
+<text x="280.0" y="305" class="path">27</text>
+</svg></p>
+<p><svg width="360" height="320">
+<text x="5" y="25">(0,0)</text>
+<text x="310" y="25" style="text-anchor: end">After loop 3</text>
+<rect x="20" y="40" height="40" width="40" class="blocked"/>
+<text x="40.0" y="65" class="path">27</text>
+<rect x="60" y="40" height="40" width="40" class="blocked"/>
+<text x="80.0" y="65" class="path">27</text>
+<rect x="100" y="40" height="40" width="40" class="blocked"/>
+<text x="120.0" y="65" class="path">27</text>
+<rect x="140" y="40" height="40" width="40" class="blocked"/>
+<text x="160.0" y="65" class="path">27</text>
+<rect x="180" y="40" height="40" width="40" class="blocked"/>
+<text x="200.0" y="65" class="path">27</text>
+<rect x="220" y="40" height="40" width="40" class="blocked"/>
+<text x="240.0" y="65" class="path">27</text>
+<rect x="260" y="40" height="40" width="40" class="blocked"/>
+<text x="280.0" y="65" class="path">27</text>
+<rect x="20" y="80" height="40" width="40" class="blocked"/>
+<text x="40.0" y="105" class="path">27</text>
+<rect x="60" y="80" height="40" width="40" class="empty"/>
+<text x="80.0" y="105" class="path">26</text>
+<rect x="100" y="80" height="40" width="40" class="full"/>
+<text x="120.0" y="105" class="path">4</text>
+<path d="M138 100.0 L134 96.0 L134 104.0 Z" />
+<rect x="140" y="80" height="40" width="40" class="full"/>
+<text x="160.0" y="105" class="path">3</text>
+<path d="M178 100.0 L174 96.0 L174 104.0 Z" />
+<rect x="180" y="80" height="40" width="40" class="full"/>
+<text x="200.0" y="105" class="path">2</text>
+<path d="M216 116 L210 116 L216 110 Z" />
+<rect x="220" y="80" height="40" width="40" class="full"/>
+<text x="240.0" y="105" class="path">2</text>
+<path d="M240.0 118 L244.0 114 L236.0 114 Z" />
+<rect x="260" y="80" height="40" width="40" class="blocked"/>
+<text x="280.0" y="105" class="path">27</text>
+<rect x="20" y="120" height="40" width="40" class="blocked"/>
+<text x="40.0" y="145" class="path">27</text>
+<rect x="60" y="120" height="40" width="40" class="full"/>
+<text x="80.0" y="145" class="path">5</text>
+<path d="M96 124 L90 124 L96 130 Z" />
+<rect x="100" y="120" height="40" width="40" class="blocked"/>
+<text x="120.0" y="145" class="path">27</text>
+<rect x="140" y="120" height="40" width="40" class="blocked"/>
+<text x="160.0" y="145" class="path">27</text>
+<rect x="180" y="120" height="40" width="40" class="blocked"/>
+<text x="200.0" y="145" class="path">27</text>
+<rect x="220" y="120" height="40" width="40" class="full"/>
+<text x="240.0" y="145" class="path">1</text>
+<path d="M240.0 158 L244.0 154 L236.0 154 Z" />
+<rect x="260" y="120" height="40" width="40" class="blocked"/>
+<text x="280.0" y="145" class="path">27</text>
+<rect x="20" y="160" height="40" width="40" class="blocked"/>
+<text x="40.0" y="185" class="path">27</text>
+<rect x="60" y="160" height="40" width="40" class="full"/>
+<text x="80.0" y="185" class="path">4</text>
+<path d="M96 196 L90 196 L96 190 Z" />
+<rect x="100" y="160" height="40" width="40" class="blocked"/>
+<text x="120.0" y="185" class="path">27</text>
+<rect x="140" y="160" height="40" width="40" class="full"/>
+<text x="160.0" y="185" class="path">2</text>
+<path d="M178 180.0 L174 176.0 L174 184.0 Z" />
+<rect x="180" y="160" height="40" width="40" class="full"/>
+<text x="200.0" y="185" class="path">1</text>
+<path d="M218 180.0 L214 176.0 L214 184.0 Z" />
+<rect x="220" y="160" height="40" width="40" class="destination"/>
+<text x="240.0" y="185" class="path">0</text>
+<rect x="260" y="160" height="40" width="40" class="blocked"/>
+<text x="280.0" y="185" class="path">27</text>
+<rect x="20" y="200" height="40" width="40" class="blocked"/>
+<text x="40.0" y="225" class="path">27</text>
+<rect x="60" y="200" height="40" width="40" class="full"/>
+<text x="80.0" y="225" class="path">4</text>
+<path d="M96 236 L90 236 L96 230 Z" />
+<rect x="100" y="200" height="40" width="40" class="full"/>
+<text x="120.0" y="225" class="path">3</text>
+<path d="M136 204 L130 204 L136 210 Z" />
+<rect x="140" y="200" height="40" width="40" class="full"/>
+<text x="160.0" y="225" class="path">2</text>
+<path d="M176 204 L170 204 L176 210 Z" />
+<rect x="180" y="200" height="40" width="40" class="blocked"/>
+<text x="200.0" y="225" class="path">27</text>
+<rect x="220" y="200" height="40" width="40" class="full"/>
+<text x="240.0" y="225" class="path">1</text>
+<path d="M240.0 202 L244.0 206 L236.0 206 Z" />
+<rect x="260" y="200" height="40" width="40" class="blocked"/>
+<text x="280.0" y="225" class="path">27</text>
+<rect x="20" y="240" height="40" width="40" class="blocked"/>
+<text x="40.0" y="265" class="path">27</text>
+<rect x="60" y="240" height="40" width="40" class="full"/>
+<text x="80.0" y="265" class="path">4</text>
+<path d="M96 244 L90 244 L96 250 Z" />
+<rect x="100" y="240" height="40" width="40" class="full"/>
+<text x="120.0" y="265" class="path">3</text>
+<path d="M136 244 L130 244 L136 250 Z" />
+<rect x="140" y="240" height="40" width="40" class="full"/>
+<text x="160.0" y="265" class="path">3</text>
+<path d="M160.0 242 L164.0 246 L156.0 246 Z" />
+<rect x="180" y="240" height="40" width="40" class="full"/>
+<text x="200.0" y="265" class="path">2</text>
+<path d="M216 244 L210 244 L216 250 Z" />
+<rect x="220" y="240" height="40" width="40" class="full"/>
+<text x="240.0" y="265" class="path">2</text>
+<path d="M240.0 242 L244.0 246 L236.0 246 Z" />
+<rect x="260" y="240" height="40" width="40" class="blocked"/>
+<text x="280.0" y="265" class="path">27</text>
+<rect x="20" y="280" height="40" width="40" class="blocked"/>
+<text x="40.0" y="305" class="path">27</text>
+<rect x="60" y="280" height="40" width="40" class="blocked"/>
+<text x="80.0" y="305" class="path">27</text>
+<rect x="100" y="280" height="40" width="40" class="blocked"/>
+<text x="120.0" y="305" class="path">27</text>
+<rect x="140" y="280" height="40" width="40" class="blocked"/>
+<text x="160.0" y="305" class="path">27</text>
+<rect x="180" y="280" height="40" width="40" class="blocked"/>
+<text x="200.0" y="305" class="path">27</text>
+<rect x="220" y="280" height="40" width="40" class="blocked"/>
+<text x="240.0" y="305" class="path">27</text>
+<rect x="260" y="280" height="40" width="40" class="blocked"/>
+<text x="280.0" y="305" class="path">27</text>
+</svg></p>
+<p><svg width="360" height="320">
+<text x="5" y="25">(0,0)</text>
+<text x="310" y="25" style="text-anchor: end">After loop 4</text>
+<rect x="20" y="40" height="40" width="40" class="blocked"/>
+<text x="40.0" y="65" class="path">27</text>
+<rect x="60" y="40" height="40" width="40" class="blocked"/>
+<text x="80.0" y="65" class="path">27</text>
+<rect x="100" y="40" height="40" width="40" class="blocked"/>
+<text x="120.0" y="65" class="path">27</text>
+<rect x="140" y="40" height="40" width="40" class="blocked"/>
+<text x="160.0" y="65" class="path">27</text>
+<rect x="180" y="40" height="40" width="40" class="blocked"/>
+<text x="200.0" y="65" class="path">27</text>
+<rect x="220" y="40" height="40" width="40" class="blocked"/>
+<text x="240.0" y="65" class="path">27</text>
+<rect x="260" y="40" height="40" width="40" class="blocked"/>
+<text x="280.0" y="65" class="path">27</text>
+<rect x="20" y="80" height="40" width="40" class="blocked"/>
+<text x="40.0" y="105" class="path">27</text>
+<rect x="60" y="80" height="40" width="40" class="full"/>
+<text x="80.0" y="105" class="path">5</text>
+<path d="M98 100.0 L94 96.0 L94 104.0 Z" />
+<rect x="100" y="80" height="40" width="40" class="full"/>
+<text x="120.0" y="105" class="path">4</text>
+<path d="M138 100.0 L134 96.0 L134 104.0 Z" />
+<rect x="140" y="80" height="40" width="40" class="full"/>
+<text x="160.0" y="105" class="path">3</text>
+<path d="M178 100.0 L174 96.0 L174 104.0 Z" />
+<rect x="180" y="80" height="40" width="40" class="full"/>
+<text x="200.0" y="105" class="path">2</text>
+<path d="M216 116 L210 116 L216 110 Z" />
+<rect x="220" y="80" height="40" width="40" class="full"/>
+<text x="240.0" y="105" class="path">2</text>
+<path d="M240.0 118 L244.0 114 L236.0 114 Z" />
+<rect x="260" y="80" height="40" width="40" class="blocked"/>
+<text x="280.0" y="105" class="path">27</text>
+<rect x="20" y="120" height="40" width="40" class="blocked"/>
+<text x="40.0" y="145" class="path">27</text>
+<rect x="60" y="120" height="40" width="40" class="full"/>
+<text x="80.0" y="145" class="path">5</text>
+<path d="M96 124 L90 124 L96 130 Z" />
+<rect x="100" y="120" height="40" width="40" class="blocked"/>
+<text x="120.0" y="145" class="path">27</text>
+<rect x="140" y="120" height="40" width="40" class="blocked"/>
+<text x="160.0" y="145" class="path">27</text>
+<rect x="180" y="120" height="40" width="40" class="blocked"/>
+<text x="200.0" y="145" class="path">27</text>
+<rect x="220" y="120" height="40" width="40" class="full"/>
+<text x="240.0" y="145" class="path">1</text>
+<path d="M240.0 158 L244.0 154 L236.0 154 Z" />
+<rect x="260" y="120" height="40" width="40" class="blocked"/>
+<text x="280.0" y="145" class="path">27</text>
+<rect x="20" y="160" height="40" width="40" class="blocked"/>
+<text x="40.0" y="185" class="path">27</text>
+<rect x="60" y="160" height="40" width="40" class="full"/>
+<text x="80.0" y="185" class="path">4</text>
+<path d="M96 196 L90 196 L96 190 Z" />
+<rect x="100" y="160" height="40" width="40" class="blocked"/>
+<text x="120.0" y="185" class="path">27</text>
+<rect x="140" y="160" height="40" width="40" class="full"/>
+<text x="160.0" y="185" class="path">2</text>
+<path d="M178 180.0 L174 176.0 L174 184.0 Z" />
+<rect x="180" y="160" height="40" width="40" class="full"/>
+<text x="200.0" y="185" class="path">1</text>
+<path d="M218 180.0 L214 176.0 L214 184.0 Z" />
+<rect x="220" y="160" height="40" width="40" class="destination"/>
+<text x="240.0" y="185" class="path">0</text>
+<rect x="260" y="160" height="40" width="40" class="blocked"/>
+<text x="280.0" y="185" class="path">27</text>
+<rect x="20" y="200" height="40" width="40" class="blocked"/>
+<text x="40.0" y="225" class="path">27</text>
+<rect x="60" y="200" height="40" width="40" class="full"/>
+<text x="80.0" y="225" class="path">4</text>
+<path d="M96 236 L90 236 L96 230 Z" />
+<rect x="100" y="200" height="40" width="40" class="full"/>
+<text x="120.0" y="225" class="path">3</text>
+<path d="M136 204 L130 204 L136 210 Z" />
+<rect x="140" y="200" height="40" width="40" class="full"/>
+<text x="160.0" y="225" class="path">2</text>
+<path d="M176 204 L170 204 L176 210 Z" />
+<rect x="180" y="200" height="40" width="40" class="blocked"/>
+<text x="200.0" y="225" class="path">27</text>
+<rect x="220" y="200" height="40" width="40" class="full"/>
+<text x="240.0" y="225" class="path">1</text>
+<path d="M240.0 202 L244.0 206 L236.0 206 Z" />
+<rect x="260" y="200" height="40" width="40" class="blocked"/>
+<text x="280.0" y="225" class="path">27</text>
+<rect x="20" y="240" height="40" width="40" class="blocked"/>
+<text x="40.0" y="265" class="path">27</text>
+<rect x="60" y="240" height="40" width="40" class="full"/>
+<text x="80.0" y="265" class="path">4</text>
+<path d="M96 244 L90 244 L96 250 Z" />
+<rect x="100" y="240" height="40" width="40" class="full"/>
+<text x="120.0" y="265" class="path">3</text>
+<path d="M136 244 L130 244 L136 250 Z" />
+<rect x="140" y="240" height="40" width="40" class="full"/>
+<text x="160.0" y="265" class="path">3</text>
+<path d="M160.0 242 L164.0 246 L156.0 246 Z" />
+<rect x="180" y="240" height="40" width="40" class="full"/>
+<text x="200.0" y="265" class="path">2</text>
+<path d="M216 244 L210 244 L216 250 Z" />
+<rect x="220" y="240" height="40" width="40" class="full"/>
+<text x="240.0" y="265" class="path">2</text>
+<path d="M240.0 242 L244.0 246 L236.0 246 Z" />
+<rect x="260" y="240" height="40" width="40" class="blocked"/>
+<text x="280.0" y="265" class="path">27</text>
+<rect x="20" y="280" height="40" width="40" class="blocked"/>
+<text x="40.0" y="305" class="path">27</text>
+<rect x="60" y="280" height="40" width="40" class="blocked"/>
+<text x="80.0" y="305" class="path">27</text>
+<rect x="100" y="280" height="40" width="40" class="blocked"/>
+<text x="120.0" y="305" class="path">27</text>
+<rect x="140" y="280" height="40" width="40" class="blocked"/>
+<text x="160.0" y="305" class="path">27</text>
+<rect x="180" y="280" height="40" width="40" class="blocked"/>
+<text x="200.0" y="305" class="path">27</text>
+<rect x="220" y="280" height="40" width="40" class="blocked"/>
+<text x="240.0" y="305" class="path">27</text>
+<rect x="260" y="280" height="40" width="40" class="blocked"/>
+<text x="280.0" y="305" class="path">27</text>
+</svg></p>
+<p>Seconds in main loop w/ HTML output = 0.000605</p>
+  </body>
+</html>
